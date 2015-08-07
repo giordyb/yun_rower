@@ -37,7 +37,6 @@ unsigned long timer1 = 0;
 unsigned long timer2 = 0;
 String datestring;
 
-
 /*-----------------SETUP-----------------------------------*/
 void setup() {
   lcd.begin(16, 2);  // set up the LCD's number of columns and rows:
@@ -78,6 +77,7 @@ void setup() {
   timer1 = millis();
   timer2 = millis();
 }
+
 /*------------------LOOP-----------------------------------*/
 void loop() {
   lcd.clear();
