@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<!-- Load c3.css -->
+<link href="c3.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<CENTER><H1>WATERROWER PERFORMANCE</H1></CENTER>
+<div id="chart"></div>
+<div id="splits"></div>
+<!-- Load d3.js and c3.js -->
+<script src="d3.js" charset="utf-8"></script>
+<script src="c3.js"></script>
+<script type="text/javascript">
+	var chart = c3.generate({
+    bindto: '#chart',
+    zoom: {
+        enabled: true
+    	},
+    	subchart: {
+        show: true
+    	},
+    data: {
+    	x: 'date',
+    	xFormat: '%Y-%m-%d_%H-%M-%S',
+    	url: 'datalog.csv',
+      names: {distance: 'Distance (Meters)', duration: 'Duration (Seconds)'},
+      types: {
+        distance: 'line',
+        duration: 'line'
+      },
+      	axes: {
+      		duration: 'y',
+      		distance: 'y2',
+      	},
+      	onmouseover: function (d) { 
+      		var splitfile = d.x.getFullYear().toString() + "-" + ("0" + (d.x.getMonth()+1)).slice(-2).toString() + "-" + ("0" + d.x.getDate()).slice(-2).toString() + "_" +  ("0" + d.x.getHours()).slice(-2).toString() + "-" + ("0" + d.x.getMinutes()).slice(-2).toString() + "-" + ("0" + d.x.getSeconds()).slice(-2).toString() + ".csv";
+        console.log(splitfile);
+        var chart2 = c3.generate({
+          bindto: '#splits',
+          data: {
+            url: splitfile,
+            type: 'spline',
+            names: {splits: '500 Meters Splits'}
+          },
+          axis: {
+        x: {
+            type: 'category',
+            categories: ['500', '1000', '1500', '2000', '2500', '3000', '3500', '4000', '4500', '5000','5500','6000','6500','7000','7500','8000']
+        },
+        y: { label: {text: 'Seconds', position: 'outer-middle'},}
+    }
+        })
+      	},
+      },
+ axis : {
+        x : {
+            type : 'timeseries',
+            label: {text: 'Dates', position: 'outer-middle'},
+
+            tick: {
+                format: '%Y-%m-%d'
+            }
+        },
+        y  : {label: {text: 'Seconds', position: 'outer-middle'},},
+        y2 : {
+        	show: true,
+          label: {text: 'Meters', position: 'outer-middle'},
+        }
+    }
+
+});
+</script>
+</body>
+</html>

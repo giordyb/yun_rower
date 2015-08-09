@@ -1,0 +1,85 @@
+<html>
+<head>
+<script type="text/javascript"
+  src="dygraph-combined-dev.js"></script>
+    </head>
+      <body>
+        <div id="graphdiv"></div>
+          <div id="container"</div>
+            <script type="text/javascript">
+           g = new Dygraph(document.getElementById("graphdiv"), "datalog.csv", {
+         title: 'WaterRower Performance',
+         ylabel: 'Distance/Duration',
+         y2label: 'Splits',
+         xlabel: 'Date',
+         width: 800,
+         height: 600,
+         legend: 'always',
+         showRangeSelector: true,
+         labels: ["Date", "Duration", "Distance", "Split500", "Split1000", "Split1500", "Split2000", "Split2500", "Split3000", "Split3500", "Split4000", "Split4500", "Split5000", "Split5500", "Split6000", "Split6500", "Split7000", "Split7500", "Split8000"],
+         Split500: {
+             axis: {}
+         },
+         Split1000: {
+             axis: 'Split500'
+
+         },
+         Split1500: {
+             axis: 'Split500'
+
+         },
+         Split2000: {
+             axis: 'Split500'
+
+         },
+         Split2500: {
+             axis: 'Split500'
+
+         },
+         Split3000: {
+             axis: 'Split500'
+
+         },
+         Split3500: {
+             axis: 'Split500'
+
+         },
+         Split4000: {
+             axis: 'Split500'
+
+         },
+         Split4500: {
+             axis: 'Split500'
+
+         },
+         Split5000: {
+             axis: 'Split500'
+
+         },
+         Split5500: {
+             axis: 'Split500'
+
+         },
+         Split6000: {
+             axis: 'Split500'
+
+         },
+         Split6500: {
+             axis: 'Split500'
+
+         },
+         Split7000: {
+             axis: 'Split500'
+
+         },
+         Split7500: {
+             axis: 'Split500'
+         },
+         Split8000: {
+             axis: 'Split500'
+
+         }
+     });
+                  </script>
+                  </body>
+                  </html>
