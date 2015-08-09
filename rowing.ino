@@ -46,10 +46,10 @@ void rowing() {
       lcd.print("0");
     lcd.print(second());
     lcd.setCursor(9, 1);
-    lcd.print("M/m ");
+    lcd.print("M/s ");
     lcd.print(Mm);
     /* calculate meters/min*/
-    if ((millis() - timer1) > 10000) {
+    if ((millis() - timer1) > 1000) {
       calcmetersmin();
       timer1 = millis();
       lcd.clear();
@@ -78,9 +78,17 @@ void rowing() {
         }
     }
 
-    if (random(0, 100) < 70)
-      rowerinterrupt();
+ /*   if (random(0, 100) < 70)
+      rowerinterrupt();*/
   }
+}
+
+/*-----debounce------*/
+void rowerdebounceinterrupt() {
+    if((long)(micros() - last_micros) >= debouncing_time * 1000) {
+    rowerinterrupt();
+    last_micros = micros();
+    }
 }
 /*------------------INTERRUPT-----------------------------------*/
 void rowerinterrupt() {

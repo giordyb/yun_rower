@@ -6,7 +6,7 @@
 
 //calculate meters per minute
 void calcmetersmin() {
-  Mm = (meters - meters_old) * 6;
+  Mm = (meters - meters_old);
   meters_old = meters;
   //Serial.println(Mm);
 }

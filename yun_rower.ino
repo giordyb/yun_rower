@@ -4,7 +4,7 @@
 #include <Time.h>
 #include <FileIO.h>
 #include <Process.h>
-const float Ratio = 4.92;
+const float Ratio = 4.8;
 //const float Ratio = 1;
 #define btnRIGHT  0
 #define btnUP     1
@@ -12,6 +12,7 @@ const float Ratio = 4.92;
 #define btnLEFT   3
 #define btnSELECT 4
 #define btnNONE   5
+
 /*-----------------SETUP--PINS-----------------------------*/
 const int ROWERINPUT = 2; // the input pin where the waterrower sensor is connected
 const int BUTTONSPIN = 0;
@@ -23,7 +24,8 @@ volatile unsigned long last_click_time = 0;
 volatile unsigned long old_split = 0;
 volatile unsigned long split_time = 0;
 volatile unsigned long start_split;
-
+long debouncing_time = 15; //Debouncing Time in Milliseconds
+volatile unsigned long last_micros;
 
 volatile int clicks = 0;
 volatile long rpm = 0;
@@ -71,9 +73,9 @@ void setup() {
     }*/
   //Console.println("You're connected to the Console!!!!");
   pinMode(ROWERINPUT, INPUT_PULLUP);
-  //digitalWrite(ROWERINPUT, HIGH);
+  digitalWrite(ROWERINPUT, HIGH);
   //delay(1000);
-  attachInterrupt(1, rowerinterrupt, FALLING);
+  attachInterrupt(1, rowerdebounceinterrupt, FALLING);
   timer1 = millis();
   timer2 = millis();
 }
@@ -91,7 +93,6 @@ void loop() {
   }
   row_start();
 }
-
 
 
 
