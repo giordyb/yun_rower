@@ -14,6 +14,12 @@
 <script type="text/javascript">
 	var chart = c3.generate({
     bindto: '#chart',
+    zoom: {
+        enabled: true
+    	},
+    	subchart: {
+        show: true
+    	},
     data: {
     	x: 'date',
     	xFormat: '%Y-%m-%d_%H-%M-%S',
