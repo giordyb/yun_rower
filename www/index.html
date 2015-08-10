@@ -24,14 +24,16 @@
     	x: 'date',
     	xFormat: '%Y-%m-%d_%H-%M-%S',
     	url: 'datalog.csv',
-      names: {distance: 'Distance (Meters)', duration: 'Duration (Seconds)'},
+      names: {distance: 'Distance (Meters)', duration: 'Duration (Seconds)', average: 'Average (Meters/min)'},
       types: {
         distance: 'line',
-        duration: 'line'
+        duration: 'line',
+        average: 'line',
       },
       	axes: {
       		duration: 'y',
-      		distance: 'y2',
+      		distance: 'y',
+      		average:  'y2'
       	},
       	onmouseover: function (d) { 
       		var splitfile = d.x.getFullYear().toString() + "-" + ("0" + (d.x.getMonth()+1)).slice(-2).toString() + "-" + ("0" + d.x.getDate()).slice(-2).toString() + "_" +  ("0" + d.x.getHours()).slice(-2).toString() + "-" + ("0" + d.x.getMinutes()).slice(-2).toString() + "-" + ("0" + d.x.getSeconds()).slice(-2).toString() + ".csv";

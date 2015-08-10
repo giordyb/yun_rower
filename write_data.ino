@@ -11,6 +11,10 @@ void writeperformancetosd() {
   dataString += totaltime;
   dataString += ",";
   dataString += meters;
+  dataString += ",";
+  float average = (float) meters / totaltime;
+  average = average * 60;
+  dataString += average;
   if (FileSystem.begin()) {
     Serial.println("filesystem begin OK");
   }
