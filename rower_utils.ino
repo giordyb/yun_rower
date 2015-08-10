@@ -2,12 +2,13 @@
 void reset() {
   Serial.println("Reset");
   clicks = 0;
+  clicks_old = 0;
   meters = 0;
   meters_old = 0;
   click_time = 0;
   old_split = 0;
   split_time = 0;
-  Mm = 0;
+  Ms = 0;
   timer1 = 0;
   timer2 = 0;
   old_split = millis();

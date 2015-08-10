@@ -14,7 +14,7 @@ void row_start() {
   delay(500);
   lcd.setCursor(0, 1);
   lcd.print("      ROW!!!     ");
-  delay(1000);
+  delay(500);
   lcd.clear();
   reset();
   rowing();
@@ -46,11 +46,12 @@ void rowing() {
       lcd.print("0");
     lcd.print(second());
     lcd.setCursor(9, 1);
-    lcd.print("M/s ");
-    lcd.print(Mm);
+    lcd.print("Ms ");
+    lcd.print(Ms, 2);
     /* calculate meters/min*/
     if ((millis() - timer1) > 1000) {
-      calcmetersmin();
+      Ms = calcmetersmin();
+      //Serial.println(Ms);
       timer1 = millis();
       lcd.clear();
     }
@@ -78,17 +79,21 @@ void rowing() {
         }
     }
 
- /*   if (random(0, 100) < 70)
-      rowerinterrupt();*/
+/*-------SIMULATE ROWING-------------*/ 
+//      if (random(0, 100) < 70) {
+//         rowerinterrupt();
+//         }
+/*-------SIMULATE ROWING-------------*/ 
   }
+
 }
 
 /*-----debounce------*/
 void rowerdebounceinterrupt() {
-    if((long)(micros() - last_micros) >= debouncing_time * 1000) {
+  if ((long)(micros() - last_micros) >= debouncing_time * 1000) {
     rowerinterrupt();
     last_micros = micros();
-    }
+  }
 }
 /*------------------INTERRUPT-----------------------------------*/
 void rowerinterrupt() {

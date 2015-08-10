@@ -26,12 +26,12 @@ volatile unsigned long split_time = 0;
 volatile unsigned long start_split;
 long debouncing_time = 15; //Debouncing Time in Milliseconds
 volatile unsigned long last_micros;
-
 volatile int clicks = 0;
+volatile int clicks_old = 0;
 volatile long rpm = 0;
 volatile long old_rpm = 0;
 int accel = 0;
-volatile int Mm = 0;
+volatile float Ms = 0;
 volatile int meters = 0;
 volatile int meters_old = 0;
 volatile int trigger = 0;

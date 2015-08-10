@@ -4,11 +4,11 @@
   last_click_time = click_time;
   }*/
 
-//calculate meters per minute
-void calcmetersmin() {
-  Mm = (meters - meters_old);
-  meters_old = meters;
-  //Serial.println(Mm);
+//calculate and return meters per second
+float calcmetersmin() {
+  float x = (clicks - clicks_old) / Ratio;
+  clicks_old = clicks;
+  return x; 
 }
 
 //calculate 500m split time (in seconds)
