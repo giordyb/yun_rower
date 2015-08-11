@@ -9,3 +9,5 @@ It can keep track of duration of the exercise, distance, intensity (meters x sec
 It also has it's own web server that reads the saved data and creates a simple graph with the stats.
 
 ![192_168_145_103_sd_.png](https://bitbucket.org/repo/XdXBrG/images/2373117926-192_168_145_103_sd_.png)
+
+if you are interested please send me an email: giordy_at_giordy.it
