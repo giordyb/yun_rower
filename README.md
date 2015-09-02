@@ -6,7 +6,7 @@ This project is a replacement for the [WaterRower A1](https://www.waterrower.it/
 
 ![IMG_6146.jpg](https://bitbucket.org/repo/XdXBrG/images/3418155426-IMG_6146.jpg)
 
-It reads the speed of the wheel via a sensor located on top of a disk with 6 magnets
+The Yun reads reads the speed of the wheel via a 2-wire sensor located on top of a disk with 6 magnets.
 
 ![8Gwne9W.jpg](https://bitbucket.org/repo/XdXBrG/images/2013458362-8Gwne9W.jpg)  
 
