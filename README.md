@@ -1,6 +1,6 @@
 # README #
 
-This project is a replacement for the WaterRower A1 monitor. It runs on a Arduino Yun with an LCD Shield on top.
+This project is a replacement for the [WaterRower A1](https://www.waterrower.it/wra1.php) monitor. It runs on a Arduino Yun with an LCD Shield on top.
 
 ![IMG_6143.jpg](https://bitbucket.org/repo/XdXBrG/images/1518004658-IMG_6143.jpg)
 
